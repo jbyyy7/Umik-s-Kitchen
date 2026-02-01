@@ -7,7 +7,7 @@ import { MessageCircle, Phone } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-primary to-primary-dark text-white relative overflow-hidden">
+    <section className="py-20 pb-0 bg-gradient-to-r from-primary to-primary-dark text-white relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32" />
