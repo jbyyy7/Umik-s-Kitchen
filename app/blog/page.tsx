@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { getBlogPosts } from "@/data/blog";
@@ -38,12 +37,12 @@ export default function BlogPage() {
               className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
             >
               <Link href={`/blog/${post.slug}`}>
-                <div className="relative h-56">
-                  <Image
+                <div className="relative h-56 overflow-hidden">
+                  <img
                     src={post.image}
                     alt={post.title}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-primary text-white text-sm font-semibold rounded-full">

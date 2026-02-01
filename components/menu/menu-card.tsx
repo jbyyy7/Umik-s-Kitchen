@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Plus, Star } from "lucide-react";
 import { MenuItem } from "@/data/menu";
@@ -24,12 +23,12 @@ export default function MenuCard({ item }: MenuCardProps) {
       className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
     >
       {/* Image Container */}
-      <div className="relative h-56 bg-gray-200 dark:bg-gray-700">
-        <Image
+      <div className="relative h-56 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+        <img
           src={item.image}
           alt={item.name}
-          fill
-          className="object-cover"
+          className="w-full h-full object-cover"
+          loading="lazy"
           onError={(e) => {
             // Fallback to placeholder
             const target = e.target as HTMLImageElement;

@@ -2,7 +2,6 @@
 
 import React from "react";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, User, ArrowLeft, ArrowRight } from "lucide-react";
@@ -42,11 +41,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           animate={{ opacity: 1, y: 0 }}
           className="relative h-96 rounded-2xl overflow-hidden mb-8"
         >
-          <Image
+          <img
             src={post.image}
             alt={post.title}
-            fill
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-6 left-6">
@@ -114,12 +112,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   href={`/blog/${relatedPost.slug}`}
                   className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group"
                 >
-                  <div className="relative h-40">
-                    <Image
+                  <div className="relative h-40 overflow-hidden">
+                    <img
                       src={relatedPost.image}
                       alt={relatedPost.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-4">
