@@ -71,6 +71,16 @@ export const menuItems: MenuItem[] = [
     isBestSeller: true,
     ingredients: ["Nasi Kuning", "Ayam Kecap", "Sambal Kentang dan Hati", "Kerupuk"],
   },
+  {
+    id: "paket-request",
+    name: "Paket Request",
+    category: "nasi-kotak",
+    price: 0,
+    description: "Punya ide menu sendiri? Diskusikan dengan kami!",
+    image: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=800&q=80",
+    isBestSeller: false,
+    ingredients: ["Custom Menu", "Sesuai Permintaan"],
+  },
 
   // ANEKA BUBUR
   {
