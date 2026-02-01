@@ -49,9 +49,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold font-playfair text-primary">
-              Umik's Kitchen
-            </div>
+            <img 
+              src="/logo.webp" 
+              alt="Umik's Kitchen Logo" 
+              className="h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}

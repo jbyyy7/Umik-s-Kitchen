@@ -34,10 +34,28 @@ export const metadata: Metadata = {
     "makanan rumahan",
   ],
   authors: [{ name: "Umik's Kitchen" }],
+  icons: {
+    icon: "/logo.webp",
+    apple: "/logo.webp",
+  },
   openGraph: {
     title: "Umik's Kitchen - Catering Rumahan Situbondo",
     description: "Catering rumahan dengan cita rasa autentik",
     type: "website",
+    images: [
+      {
+        url: "/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Umik's Kitchen Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Umik's Kitchen - Catering Rumahan Situbondo",
+    description: "Catering rumahan dengan cita rasa autentik",
+    images: ["/logo.webp"],
   },
 };
 

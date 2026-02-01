@@ -11,9 +11,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-2xl font-playfair font-bold mb-4">
-              Umik's Kitchen
-            </h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/logo.webp" 
+                alt="Umik's Kitchen Logo" 
+                className="h-12 w-auto object-contain"
+              />
+              <h3 className="text-2xl font-playfair font-bold\">
+                Umik's Kitchen
+              </h3>
+            </div>
             <p className="text-cream-light text-sm leading-relaxed">
               Catering rumahan berkualitas dengan resep warisan dan bahan segar.
               Melayani berbagai acara dengan cita rasa autentik khas Situbondo.
