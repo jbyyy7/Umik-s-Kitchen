@@ -13,20 +13,30 @@ interface MenuManagementContextType {
 
 const MenuManagementContext = createContext<MenuManagementContextType | undefined>(undefined);
 
+// Version key untuk force update menu dari data/menu.ts
+const MENU_VERSION = "v2.0"; // Update ini untuk force reload dari data/menu.ts
+
 export function MenuManagementProvider({ children }: { children: React.ReactNode }) {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
 
   // Load menu items from localStorage or use default
   useEffect(() => {
+    const savedVersion = localStorage.getItem("menu-version");
     const savedMenu = localStorage.getItem("admin-menu-items");
-    if (savedMenu) {
-      setMenuItems(JSON.parse(savedMenu));
-    } else {
-      // Import default menu
+    
+    // Force reload if version mismatch atau ga ada saved menu
+    if (savedVersion !== MENU_VERSION || !savedMenu) {
+      // Clear old data
+      localStorage.removeItem("admin-menu-items");
+      localStorage.setItem("menu-version", MENU_VERSION);
+      
+      // Import fresh menu from data/menu.ts
       import("@/data/menu").then((module) => {
         setMenuItems(module.menuItems);
         localStorage.setItem("admin-menu-items", JSON.stringify(module.menuItems));
       });
+    } else {
+      setMenuItems(JSON.parse(savedMenu));
     }
   }, []);
 
